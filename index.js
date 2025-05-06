@@ -11,6 +11,7 @@ import { bootstrap } from "./src/modules/index.routes.js";
 import { AppError } from "./src/utils/AppError.js";
 import { globalError } from "./src/middleware/globalError.js";
 import cors from "cors";
+import colors from "colors";
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -39,5 +40,5 @@ process.on('unhandledRejection', err => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port} 👌`);
+    console.log(`Server running on port ${port} 👌`.grey.bold);
 });
